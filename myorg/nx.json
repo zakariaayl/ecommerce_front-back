@@ -1,0 +1,8 @@
+{
+  "installation": {
+    "version": "20.3.3",
+    "plugins": {
+      "@nxrocks/nx-spring-boot": "latest"
+    }
+  }
+}

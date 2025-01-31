@@ -5,6 +5,10 @@
   "prefix": "app",
   "sourceRoot": "apps/Ecommerce_front_back/src",
   "tags": [],
+  "assets": [
+  "apps/Ecommerce_front_back/src/favicon.ico",
+  "apps/Ecommerce_front_back/src/assets"
+],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
@@ -17,10 +21,8 @@
         "tsConfig": "apps/Ecommerce_front_back/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          {
-            "glob": "**/*",
-            "input": "apps/Ecommerce_front_back/public"
-          }
+          "apps/Ecommerce_front_back/src/favicon.ico",
+          "apps/Ecommerce_front_back/src/assets"
         ],
         "styles": ["apps/Ecommerce_front_back/src/styles.scss"],
         "scripts": []
@@ -85,5 +87,6 @@
         "spa": true
       }
     }
+    
   }
 }

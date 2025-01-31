@@ -1,0 +1,59 @@
+<nav class="bg-stone-600 p-4">
+  <div class="container mx-auto">
+    <!-- Navbar Layout -->
+    <menu class="flex items-center justify-between">
+
+      <!-- Center Section -->
+      <div class="flex items-center space-x-6">
+        <!-- Home Button -->
+        <button class="text-white hover:text-gray-300 flex items-center space-x-2" routerLink="/home">
+          <fa-icon [icon]="['fas', 'home']"></fa-icon>
+          <span>Home</span>
+        </button>
+
+        <!-- Products Dropdown -->
+        <li class="relative">
+          <details #productmenu class="group">
+            <summary class="text-white hover:text-gray-300 cursor-pointer flex items-center space-x-2">
+              <span>Products</span>
+              <fa-icon [icon]="['fas', 'chevron-down']" class="text-sm"></fa-icon>
+            </summary>
+            <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">All</a></li>
+              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Tec</a></li>
+              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Football</a></li>
+            </ul>
+          </details>
+        </li>
+      </div>
+
+      <!-- Right Section -->
+      <div class="flex items-center space-x-6 ml-auto">
+        <!-- Admin Dropdown -->
+        <li class="relative">
+          <details #adminmenu class="group">
+            <summary class="text-white hover:text-gray-300 cursor-pointer flex items-center space-x-2">
+              <span>Admin</span>
+              <fa-icon [icon]="['fas', 'chevron-down']" class="text-sm"></fa-icon>
+            </summary>
+            <ul class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">All</a></li>
+              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Tec</a></li>
+              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Football</a></li>
+            </ul>
+          </details>
+        </li>
+
+        <!-- Cart Logo -->
+        <li>
+          <div class="drop-shadow-lg" routerLink="/cart">
+            <div tabindex="0" role="button" class="text-white hover:text-gray-300">
+              <fa-icon [icon]="['fas', 'cart-shopping']"></fa-icon>
+            </div>
+          </div>
+        </li>
+      </div>
+    </menu>
+  </div>
+</nav>
+
