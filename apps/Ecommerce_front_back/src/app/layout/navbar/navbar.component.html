@@ -19,9 +19,12 @@
               <fa-icon [icon]="['fas', 'chevron-down']" class="text-sm"></fa-icon>
             </summary>
             <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">All</a></li>
-              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Tec</a></li>
-              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Football</a></li>
+              <li>
+                <button class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full" (click)="all()">all</button>
+              </li>
+              <li *ngFor="let cat of categories">
+                <button class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full" (click)="nav(cat)">{{cat}}</button>
+              </li>
             </ul>
           </details>
         </li>
@@ -37,7 +40,7 @@
               <fa-icon [icon]="['fas', 'chevron-down']" class="text-sm"></fa-icon>
             </summary>
             <ul class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-              <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">All</a></li>
+              <li><a href="" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">All</a></li>
               <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Tec</a></li>
               <li><a href="/apps/Ecommerce_front_back/public" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Football</a></li>
             </ul>

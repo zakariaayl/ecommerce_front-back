@@ -4,7 +4,7 @@ import { Product } from '../../Models/product';
 import { Quantity } from '../../Models/Qantite';
 import { fontAwesomeIcons } from "../../font-awesome-icons";
 import { FaConfig, FaIconComponent, FaIconLibrary } from "@fortawesome/angular-fontawesome";
-import { ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../../productService/service.service';
 
 @Component({
@@ -22,28 +22,43 @@ export class HomeComponent implements OnInit {
   private faConfig = inject(FaConfig);
   private faIconLibrary = inject(FaIconLibrary);
 
-  constructor( private route: Router,private service : ServiceService) {
+  constructor(private route: Router, private service: ServiceService, private router: ActivatedRoute) {}
 
-  }
-  homeproducts:Product[]=[]
+  homeproducts: Product[] = [];
+  visibleproducts: Product[] = [];
+  category!: string;
 
   ngOnInit() {
-   this.service.getProductList().subscribe((data)=>this.homeproducts=data);
+    // Initialize FontAwesome
+    this.initFontAwesome();
 
-    }
+    this.service.getProductList().subscribe((data) => {
+      this.homeproducts = data;
+      this.updateVisibleProducts();
+    });
+
+    this.router.params.subscribe((params) => {
+      this.category = params['str'];
+      this.updateVisibleProducts();
+    });
+  }
 
   private initFontAwesome() {
-
     this.faConfig.defaultPrefix = 'far';
     this.faIconLibrary.addIcons(...fontAwesomeIcons);
   }
 
-  ld: boolean = true;
-  pd: boolean = true;
-
+  // Method to update visible products based on category
+  private updateVisibleProducts() {
+    if (this.category) {
+      this.visibleproducts = this.homeproducts.filter((data) => data.category === this.category);
+    } else {
+      this.visibleproducts = this.homeproducts;
+    }
+    console.log("Visible Products:", this.visibleproducts);
+  }
 
   minus(id: number) {
-    console.log(this.quantities);
     const quantity = this.quantities.get(id);
     if (quantity && quantity.q > 0) {
       quantity.q -= 1;
@@ -56,22 +71,17 @@ export class HomeComponent implements OnInit {
       quantity.q += 1;
     }
   }
-  category!:String;
+
   getQuantity(id: number): number {
     return this.quantities.get(id)?.q || 0;
   }
-  ngOnChanges() {
-    this.quantities.clear(); // Reset map before re-adding
-    this.products.forEach(product => {
-      this.quantities.set(product.id, new Quantity(product.id, 0));
-    });
+
+  navigate(id: number) {
+    this.route.navigate(['/product', id]);
+    console.log("navigate");
   }
-  navigate(id:number){
-    this.route.navigate(['/product',id]);
-    console.log("navigate")
-    // console.log(this.category)
-  }
-  search(){
+
+  search() {
 
   }
 }

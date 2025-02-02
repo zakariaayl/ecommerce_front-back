@@ -72,6 +72,14 @@ public class Product {
     @Column(name="category")
     private String category;
 
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
   public void setTotalPrice(int totalPrice) {
     this.totalPrice = totalPrice;
   }

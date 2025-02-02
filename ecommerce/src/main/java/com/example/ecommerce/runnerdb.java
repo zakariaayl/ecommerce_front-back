@@ -15,10 +15,11 @@ public class runnerdb {
         Product p=new Product();
         try(Session session=sessionFactory.openSession()){
             session.beginTransaction();
-              p.setName("picture");
+              p.setName("phones");
               p.setStatus("good");
               p.setQuantity("56");
-              p.setImgUrl("assets/images/R.jpg");
+              p.setCategory("tec");
+              p.setImgUrl("assets/images/phones.jpg");
               p.setDescription("kay3ref yjri ,ykkhdem lil o nhar w9tma bghiti ,bla matwklo mawalo ydber rasso");
               session.save(p);
             session.getTransaction().commit();

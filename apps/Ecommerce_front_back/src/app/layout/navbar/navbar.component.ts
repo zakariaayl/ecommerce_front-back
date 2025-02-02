@@ -33,4 +33,40 @@ export class NavbarComponent{
     console.log("navigate")
   }
   visibleProduct=this.products.filter((cat)=>cat.name=="wow")
+
+  all() {
+    this.route.navigate(['/'])
+  }
+
+  tec() {
+    this.route.navigate(['/tec'])
+    console.log("tec")
+  }
+  art(){
+    this.route.navigate(['/art'])
+    console.log("art")
+  }
+  categories: string[] = [
+    "tec",
+    "Electronics",
+    "Clothing",
+    "Home & Kitchen",
+    "Health & Beauty",
+    "Toys & Games",
+    "Books & Stationery",
+    "Sports & Outdoors",
+    "Automotive",
+    "Groceries",
+    "Furniture",
+    "Jewelry & Watches",
+    "Pet Supplies",
+    "Baby Products",
+    "Office Supplies",
+    "Music & Instruments",
+    "art"
+  ];
+
+  nav(name:string) {
+    this.route.navigate(['/'+name])
+  }
 }
