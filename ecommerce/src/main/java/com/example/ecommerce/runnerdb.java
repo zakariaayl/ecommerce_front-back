@@ -15,7 +15,7 @@ public class runnerdb {
         Product p=new Product();
         try(Session session=sessionFactory.openSession()){
             session.beginTransaction();
-              p.setName("picture");
+              p.setName("");
               p.setStatus("good");
               p.setPrice(50);
               p.setQuantity(56);

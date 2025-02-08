@@ -14,5 +14,7 @@ public class configClass implements WebMvcConfigurer {
         registry.addMapping("/product/getProducts").allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS");
         registry.addMapping("/product/getProduct/{id}").allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS");
       registry.addMapping("/product/search/{str}").allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS");
+      registry.addMapping("/product/postProduct").allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS");
+      registry.addMapping("/order/postOrder").allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS");
     }
 }

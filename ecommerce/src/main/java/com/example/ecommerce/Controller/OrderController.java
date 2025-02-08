@@ -3,6 +3,7 @@ package com.example.ecommerce.Controller;
 import com.example.ecommerce.Model.Order;
 import com.example.ecommerce.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,11 @@ public class OrderController {
     @Autowired
     public OrderController( OrderService orderService){
         this.orderService = orderService;
+    }
+    @PostMapping("/postOrder")
+    public ResponseEntity<String> postOrder(@RequestBody Order order){
+      System.out.println( "mzyan "+order.quantity);
+      return ResponseEntity.ok("kolchi howa hadak");
     }
     @GetMapping("/getOrders")
     public List<Order> findALL(){
