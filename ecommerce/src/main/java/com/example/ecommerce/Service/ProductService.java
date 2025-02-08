@@ -18,9 +18,12 @@ public class ProductService {
     public List<Product> getProducts(){
         return this.productRepository.getProducts();
     }
-    public Product findProductById(Integer integer){
-        return this.productRepository.findById(integer);
-    }
+  public Product findProductById(Integer integer){
+    return this.productRepository.findById(integer);
+  }
+  public List<Product> findProductByName(String name){
+    return this.productRepository.findByName(name);
+  }
 
 
 }

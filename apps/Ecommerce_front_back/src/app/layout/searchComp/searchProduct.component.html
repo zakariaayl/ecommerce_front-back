@@ -1,0 +1,76 @@
+<!--style="background-image: url('assets/images/background.avif');"-->
+<div class="h-screen w-full "style="background-image: linear-gradient(67.5deg, rgb(121,12,32) 0%, rgb(121,12,32) 21%,rgb(139,64,59) 21%, rgb(139,64,59) 28%,rgb(123, 66, 32) 28%, rgb(123, 66, 32) 32%,rgb(137, 86, 27) 32%, rgb(137, 86, 27) 41%,rgb(152, 105, 22) 41%, rgb(152, 105, 22) 48%,rgb(166, 125, 17) 48%, rgb(166, 125, 17) 69%,rgb(203,177,61) 69%, rgb(203,177,61) 93%,rgb(194, 164, 6) 93%, rgb(194, 164, 6) 100%),linear-gradient(45deg, rgb(121,12,32) 0%, rgb(121,12,32) 21%,rgb(139,64,59) 21%, rgb(139,64,59) 28%,rgb(123, 66, 32) 28%, rgb(123, 66, 32) 32%,rgb(137, 86, 27) 32%, rgb(137, 86, 27) 41%,rgb(152, 105, 22) 41%, rgb(152, 105, 22) 48%,rgb(166, 125, 17) 48%, rgb(166, 125, 17) 69%,rgb(203,177,61) 69%, rgb(203,177,61) 93%,rgb(194, 164, 6) 93%, rgb(194, 164, 6) 100%),linear-gradient(112.5deg, rgb(121,12,32) 0%, rgb(121,12,32) 21%,rgb(139,64,59) 21%, rgb(139,64,59) 28%,rgb(123, 66, 32) 28%, rgb(123, 66, 32) 32%,rgb(137, 86, 27) 32%, rgb(137, 86, 27) 41%,rgb(152, 105, 22) 41%, rgb(152, 105, 22) 48%,rgb(166, 125, 17) 48%, rgb(166, 125, 17) 69%,rgb(203,177,61) 69%, rgb(203,177,61) 93%,rgb(194, 164, 6) 93%, rgb(194, 164, 6) 100%),linear-gradient(90deg, rgb(173, 64, 191),rgb(42, 31, 17)); background-blend-mode:overlay,overlay,overlay,normal;">
+    ">
+    <div class=" flex items-center justify-center h-92 mb-14 " >
+      <div class="flex relative">
+        <input #Inputdata (keyup.enter)="search(Inputdata.value)" name="search" type="text" class="rounded-lg h-5/6 border border-gray-50 xl:w-[600px] sm:w-[190px] md:w-[390px]" placeholder="serach for...">
+        <button (click)="search(Inputdata.value)" class="absolute right-0 top-0 p-2 hover:scale-110"><fa-icon [icon]="['fas','search']" ></fa-icon></button>
+    <!-- <fa-icon [icon]="['fas','search']" ></fa-icon> -->
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 p-2" >
+    
+      <div>
+    
+        <!-- Product Card -->
+          <div class="bg-white w-full rounded-xl shadow-md overflow-hidden flex flex-col h-auto border border-gray-200 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 ">
+          <!-- Product Image -->
+          <div  (click)="navigate(product.id)">
+            <div class="relative h-48  overflow-hidden group">
+              <img
+              [src]="product.imgUrl"
+              [alt]="product.name"
+              class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-125"
+              />
+    
+            <!-- Hover Overlay -->
+              <div class="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300 group-hover:bg-opacity-20"></div>
+    
+            <!-- Product Description (Visible on Hover) -->
+              <div class="absolute bottom-0 left-0 right-0 p-3 bg-black bg-opacity-50 text-white text-sm text-center transform translate-y-full transition-transform duration-300 group-hover:translate-y-0 overflow-x-hidden ">
+                <div class="truncate overflow-hidden whitespace-nowrap w-50">{{ product.description }}</div>
+              </div>
+    
+                </div>
+              </div>
+    
+          <!-- Product Name -->
+              <div class="font-semibold text-lg text-gray-900 text-center p-3">
+            {{ product.name }}
+              </div>
+    
+          <!-- Quantity Controls Section -->
+          <!-- <div class="bg-gray-50 p-3 flex items-center justify-between rounded-b-xl">
+    
+            <div class="text-sm font-bold text-gray-700">Quantity</div>
+    
+    
+            <button
+              class="bg-gray-200 rounded-lg h-8 w-8 flex items-center justify-center hover:bg-gray-300 transition-colors"
+              (click)="minus(product.id)"
+            >
+              <fa-icon [icon]="['fas', 'minus']" class="text-gray-700"></fa-icon>
+            </button>
+    
+    
+            <div class="bg-gray-100 h-8 w-8 flex items-center justify-center rounded-lg border border-gray-300">
+              {{ getQuantity(product.id) }}
+            </div>
+            <button
+              class="bg-blue-500 rounded-lg h-8 w-8 flex items-center justify-center hover:bg-blue-600 transition-colors"
+              (click)="plus(product.id)"
+            >
+              <fa-icon [icon]="['fas', 'plus']" class="text-white"></fa-icon>
+            </button>
+          </div> -->
+          <div class="flex relative  text-black m-4 font-serif font-bold text-2xl ">{{product.price}}$
+            <div class="absolute right-0"><button><fa-icon [icon]="['fas','cart-shopping']"></fa-icon></button></div>
+          </div>
+    <!-- <fa-icon [icon]="['fas','cart-shopping']"></fa-icon> -->
+        </div>
+    
+      </div>
+    </div>
+    </div>
+    
+    

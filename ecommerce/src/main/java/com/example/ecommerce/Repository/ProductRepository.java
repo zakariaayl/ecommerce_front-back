@@ -33,4 +33,13 @@ public class ProductRepository {
           return p;
       }
   }
+  public List<Product> findByName(String name){
+    try(Session session=sessionfactory.openSession()){
+      session.beginTransaction();
+      List<Product> p=session.createQuery("select p from Product p where p.name= :var or p.name like :varPrefix or :var like concat(p.name, '%')", Product.class).setParameter("varPrefix","%"+name+"%").setParameter("var",name).list();
+      session.getTransaction().commit();
+      return p;
+    }
+  }
+
 }

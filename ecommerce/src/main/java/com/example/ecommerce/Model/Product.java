@@ -21,7 +21,7 @@ public class Product {
         this.status = status;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
@@ -37,7 +37,7 @@ public class Product {
         return status;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
@@ -57,7 +57,7 @@ public class Product {
     @Column(name = "status")
     String status;
     @Column(name = "quantity")
-    String quantity;
+    Integer quantity;
     @Column(name = "imgurl")
     String imgUrl;
 
