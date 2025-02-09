@@ -1,4 +1,4 @@
-<nav class="bg-stone-600 p-4">
+<nav class="bg-stone-950 p-4">
   <div class="container mx-auto">
     <!-- Navbar Layout -->
     <menu class="flex items-center justify-between">
@@ -6,13 +6,13 @@
       <!-- Center Section -->
       <div class="flex items-center space-x-6">
         <!-- Home Button -->
-        <button class="text-white hover:text-gray-300 flex items-center space-x-2" routerLink="/home">
+        <button class="text-white hover:text-gray-300 flex items-center space-x-2" routerLink="/">
           <fa-icon [icon]="['fas', 'home']"></fa-icon>
           <span>Home</span>
         </button>
 
         <!-- Products Dropdown -->
-        <li class="relative">
+        <li class="relative" >
           <details #productmenu class="group">
             <summary class="text-white hover:text-gray-300 cursor-pointer flex items-center space-x-2">
               <span>Products</span>
@@ -46,7 +46,12 @@
             </ul>
           </details>
         </li>
-
+        <li>
+        <div class="bg-white w-1/6 h-1/12 flex ml-16 mb-10 mr-7 relative">
+          <div  class="text-black absolute right-0  rounded-l-lg bg-white p-2 w-[90px] items-center flex justify-center">{{price}}$</div>
+          <div class="text-black bg-stone-800 absolute rounded-r-lg left-0 p-2">{{quantity}}</div>
+        </div>
+      </li>
         <!-- Cart Logo -->
         <li>
           <div class="drop-shadow-lg" routerLink="/cart">

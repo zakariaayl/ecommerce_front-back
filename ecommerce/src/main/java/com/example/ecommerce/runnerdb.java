@@ -15,13 +15,18 @@ public class runnerdb {
         Product p=new Product();
         try(Session session=sessionFactory.openSession()){
             session.beginTransaction();
-              p.setName("");
-              p.setStatus("good");
-              p.setPrice(50);
-              p.setQuantity(56);
-              p.setCategory("tec");
-              p.setImgUrl("assets/images/R.jpg");
-              p.setDescription("wa vchri o hnina");
+//              p.setName("");
+//              p.setStatus("good");
+//              p.setPrice(50);
+//              p.setQuantity(56);
+//              p.setCategory("tec");
+//              p.setImgUrl("assets/images/R.jpg");
+//              p.setDescription("wa vchri o hnina");
+          user.setDate(LocalDateTime.now());
+          user.setPrice(50L);
+          user.setQuantity(10);
+          user.setStatus("iwa");
+
               session.save(p);
             session.getTransaction().commit();
         }

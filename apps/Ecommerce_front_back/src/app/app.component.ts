@@ -9,10 +9,12 @@ import {ServiceService} from "./productService/service.service";
 import {Product} from "./Models/product";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import { SearchProductComponent } from './layout/searchComp/searchProduct.component';
+import { FooterComponent } from './layout/footerComp/footer.component';
 
 @Component({
-  imports: [RouterModule,FontAwesomeModule,NavbarComponent,HomeComponent,RouterLink,RouterOutlet,FormsModule
-    ,CommonModule],
+  imports: [RouterModule,FontAwesomeModule,NavbarComponent,RouterOutlet,FormsModule
+    ,CommonModule,FooterComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

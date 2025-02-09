@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +20,11 @@ public class OrderController {
     }
     @PostMapping("/postOrder")
     public ResponseEntity<String> postOrder(@RequestBody Order order){
-      System.out.println( "mzyan "+order.quantity);
+      System.out.println( "mzyan "+order.quantity+" "+order.getId()+" "+order.getStatus()+" price "+order.getPrice());
+      order.setDate(LocalDateTime.now());
+
+      orderService.saveOrder(order);
+      System.out.println("dezte mn hhna");
       return ResponseEntity.ok("kolchi howa hadak");
     }
     @GetMapping("/getOrders")

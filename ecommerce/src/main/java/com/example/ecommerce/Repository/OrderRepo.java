@@ -189,4 +189,13 @@ private final SessionFactory sessionfactory;
     public Page<Order> findAll(Pageable pageable) {
         return null;
     }
+
+  public void saveOrder(Order order) {
+      try(Session session=sessionfactory.openSession()){
+        session.beginTransaction();
+        session.save(order);
+        session.getTransaction().commit();
+      }
+
+  }
 }

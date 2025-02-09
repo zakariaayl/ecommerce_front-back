@@ -5,6 +5,7 @@ import {FaConfig, FaIconComponent, FaIconLibrary} from "@fortawesome/angular-fon
 import {fontAwesomeIcons} from "../../font-awesome-icons";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import { Product } from '../../Models/product';
+import { CartService } from '../../CartService/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,10 +18,15 @@ export class NavbarComponent{
   @Input() products:Product[]=[]
   private faIconLibrary=inject(FaIconLibrary);
   private faConfig=inject(FaConfig);
-  constructor(private route:Router ) {
+  constructor(private route:Router,private cartserv:CartService ) {
+
   }
+  price: number=0;
+  quantity: number=0;
   ngOnInit(): void {
     this.initFontAwesome();
+    this.cartserv.price.subscribe(pr=>this.price=pr)
+    this.cartserv.quantity.subscribe(q=>this.quantity=q)
   }
   private initFontAwesome(){
     this.faConfig.defaultPrefix='far';

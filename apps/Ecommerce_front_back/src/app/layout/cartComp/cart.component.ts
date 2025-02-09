@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../CartService/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,4 +8,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
-export class CartComponent {}
+export class CartComponent {
+  constructor(private cartservice:CartService){
+
+  }
+  
+}

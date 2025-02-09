@@ -10,13 +10,27 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "Orders")
 public class Order {
-
+     @Id
+     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private int id;
+  @Column(name = "Date")
+  private LocalDateTime date;
+  @Column(name="productid")
+  private Integer productid;
 
+  public void setProductid(Integer productid) {
+    this.productid = productid;
+  }
+
+  public Integer getProductid() {
+    return productid;
+  }
+
+  @Column(name="price")
+  private Long price;
     @Column(name = "status")
     private String status; // PENDING, SHIPPED, DELIVERED, CANCELLED
-    @Column(name = "Date")
-    private LocalDateTime date;
+
 
 
     public void setStatus(String status) {
@@ -47,7 +61,11 @@ public class Order {
         this.quantity = quantity;
     }
 
-    @Override
+  public void setPrice(Long price) {
+    this.price = price;
+  }
+
+  @Override
     public String toString(){
         return "hh "+this.date;
     }
@@ -60,4 +78,8 @@ public class Order {
     public int getId() {
         return id;
     }
+
+  public Long getPrice() {
+    return price;
+  }
 }

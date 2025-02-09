@@ -4,7 +4,7 @@ export class Product{
       public id:number,
         public name:string,
         public status:string,
-        public quantity:string,
+        public quantity:number,
         public imgUrl:string,
         public description:string,
         public price:number,

@@ -21,13 +21,12 @@ export class SearchProductComponent {
       this.faconfig.defaultPrefix='far';
       this.Iconlibrary.addIcons(...fontAwesomeIcons);
   }
-  product!:Product;
+  product:Product[]=[];
   ngOnInit(){
     this.initFontAwesome()
     this.router.params.subscribe((params)=>{this.str=params['str'];
       this.serach.getProduct(this.str).subscribe((data)=> {
       this.product=data;
-      console.log(this.product.id)
       })})
     }
     navigate(id: number) {
@@ -37,6 +36,6 @@ export class SearchProductComponent {
     search(str:string) {
       console.log(str)
       this.route.navigate(['/search',str])
-  
+
     }
 }

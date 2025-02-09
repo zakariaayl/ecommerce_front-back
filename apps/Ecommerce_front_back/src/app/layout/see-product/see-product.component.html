@@ -1,10 +1,50 @@
-
-<div class="h-92 flex items-center justify-center h-screen relative" style="background-image: url('assets/images/background.avif');">
-      <div class="absolute shadow-lg shadow-black h-3/6 w-2/6 rounded-lg left-20 top-11">
-        <img [src]="product.imgUrl" class="hover:scale-105 h-full w-full rounded-lg ">
-       </div> 
-       <div class="flex flex-col space-y-3 m-4 absolute left-[650px] mx-32 top-11">
-        <p class="text-white text-xl font-semibold">{{product.name}}</p>
-        <p class="text-white">{{product.description}}</p>
+<div class="h-screen w-full bg-stone-800 flex items-start  justify-center">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center justify-center mt-4">
+    <!-- Image Section -->
+    <div class="shadow-lg shadow-black h-auto w-5/6 mx-auto rounded-lg border border-white flex items-center justify-center">
+      <img [src]="product.imgUrl" class="hover:scale-105 h-full w-full rounded-lg">
     </div>
+
+    <!-- Content Section -->
+    <div class="flex flex-col h-auto w-5/6 mx-auto">
+      <!-- Product Name -->
+      <p class="text-white text-xl font-semibold mb-1">{{product.name}}</p>
+      
+      <!-- Product Description -->
+      <p class="text-white mb-2">{{product.description}}</p>
+      
+      <!-- Quantity Section -->
+      <div class="bg-gray-50 p-2 w-full flex items-center justify-between rounded-lg mx-auto">
+        <div class="text-sm font-bold text-gray-700">Quantity</div>
+        
+        <!-- Minus Button -->
+        <button
+          class="bg-gray-200 rounded-lg h-10 w-10 flex items-center justify-center hover:bg-gray-300 transition-colors"
+          (click)="minus()"
+        >
+          <fa-icon [icon]="['fas', 'minus']" class="text-gray-700"></fa-icon>
+        </button>
+        
+        <!-- Quantity Display -->
+        <div class="bg-gray-100 h-10 w-10 flex items-center justify-center rounded-lg border border-gray-300">
+          {{this.order.quantity}}
+        </div>
+        
+        <!-- Plus Button -->
+        <button
+          class="bg-blue-500 rounded-lg h-10 w-10 flex items-center justify-center hover:bg-blue-600 transition-colors"
+          (click)="plus()"
+        >
+          <fa-icon [icon]="['fas', 'plus']" class="text-white"></fa-icon>
+        </button>
+        
+        <!-- Buy Now Button -->
+        <div class="flex items-center justify-center w-5/12 h-full bg-black rounded-lg">
+          <button (click)="orderr(order,product.price)"class="text-white font-bold font-serif text-center">
+            Buy Now Take One Free
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
