@@ -2,14 +2,16 @@ package com.example.ecommerce.Controller;
 
 import com.example.ecommerce.Model.Order;
 import com.example.ecommerce.Service.OrderService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -25,7 +27,7 @@ public class OrderController {
 
       orderService.saveOrder(order);
       System.out.println("dezte mn hhna");
-      return ResponseEntity.ok("kolchi howa hadak");
+      return ResponseEntity.ok("");
     }
     @GetMapping("/getOrders")
     public List<Order> findALL(){
@@ -44,4 +46,9 @@ public class OrderController {
         this.orderService.saveAndFlush(o);
         return "  ";
     }
+    @GetMapping("/csrf-token")
+  public CsrfToken GETtoken(HttpServletRequest request){
+      return (CsrfToken) request.getAttribute("_csrf");
+    }
+
 }

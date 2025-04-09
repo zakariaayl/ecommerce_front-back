@@ -2,6 +2,7 @@ package com.example.ecommerce.Service;
 
 import com.example.ecommerce.Model.Customer;
 import com.example.ecommerce.Repository.customerRepo;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ public class customerService {
     public boolean login(Customer cus){
         return this.customerrepo.login(cus);
     }
-    public String register(Customer cus) throws IOException {
+    public ResponseEntity<String> register(Customer cus) throws IOException {
         return this.customerrepo.register(cus);
     }
 
