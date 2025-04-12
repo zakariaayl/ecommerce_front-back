@@ -15,17 +15,17 @@ public class runnerdb {
         Product p=new Product();
         try(Session session=sessionFactory.openSession()){
             session.beginTransaction();
-//              p.setName("");
-//              p.setStatus("good");
-//              p.setPrice(50);
-//              p.setQuantity(56);
-//              p.setCategory("tec");
-//              p.setImgUrl("assets/images/R.jpg");
-//              p.setDescription("wa vchri o hnina");
-          order.setDate(LocalDateTime.now());
-          order.setPrice(50L);
-          order.setQuantity(10);
-          order.setStatus("iwa");
+              p.setName("phone");
+              p.setStatus("good");
+              p.setPrice(75);
+              p.setQuantity(56);
+              p.setCategory("art");
+              p.setImgUrl("assets/images/phones.jpg");
+              p.setDescription("A suit is a timeless ensemble that blends elegance and sophistication. It typically includes a matching jacket and trousers.");
+//          order.setDate(LocalDateTime.now());
+//          order.setPrice(50L);
+//          order.setQuantity(10);
+//          order.setStatus("iwa");
 
               session.save(p);
             session.getTransaction().commit();

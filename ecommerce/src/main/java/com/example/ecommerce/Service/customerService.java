@@ -18,7 +18,8 @@ public class customerService {
         return this.customerrepo.login(cus);
     }
     public ResponseEntity<String> register(Customer cus) throws IOException {
-        return this.customerrepo.register(cus);
+        if(this.customerrepo.findbyemail(cus.getEmail())==null)  return this.customerrepo.register(cus);
+        return ResponseEntity.status(500).body("this email is already used by another account");
     }
 
 }

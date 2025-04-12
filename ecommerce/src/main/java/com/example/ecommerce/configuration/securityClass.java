@@ -31,10 +31,9 @@ public class securityClass {
     return http
       .cors(cors->cors.configurationSource(corsConfigurationSource()))
       .authorizeHttpRequests(auth -> auth
-        .requestMatchers("/product/*").authenticated()
         .requestMatchers("/order/postOrder").authenticated()
         .requestMatchers("/user/*").permitAll()
-        .anyRequest().authenticated()
+        .anyRequest().permitAll()
       )
       .formLogin(Customizer.withDefaults())
       .httpBasic(Customizer.withDefaults())

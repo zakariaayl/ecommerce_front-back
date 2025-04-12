@@ -1,4 +1,4 @@
-<nav class="bg-stone-950 p-4">
+<nav class="bg-orange-400 p-4">
   <div class="container mx-auto">
     <!-- Navbar Layout -->
     <menu class="flex items-center justify-between">
@@ -49,9 +49,36 @@
         <li>
         <div class="bg-white w-1/6 h-1/12 flex ml-16 mb-10 mr-7 relative">
           <div  class="text-black absolute right-0  rounded-l-lg bg-white p-2 w-[90px] items-center flex justify-center">{{price}}$</div>
-          <div class="text-black bg-stone-800 absolute rounded-r-lg left-0 p-2">{{quantity}}</div>
+          <div class="text-black bg-gray-200 absolute rounded-r-lg left-0 p-2">{{quantity}}</div>
         </div>
       </li>
+      <div *ngIf="auth.isAuthenticated; else loggedOut">
+        <p>Welcome, {{ auth.user?.name }}</p>
+        <li class="relative" >
+        <details #adminmenu class="group">
+          <summary class="text-white hover:text-gray-300 cursor-pointer flex items-center space-x-2">
+            <span><fa-icon [icon]="['fas', 'user']" class="text-sm"></fa-icon></span>
+            <fa-icon [icon]="['fas', 'chevron-down']" class="text-sm"></fa-icon>
+          </summary>
+          <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50 ">
+            <li>
+              <button (click)="auth.logout()" class="bg-white p-2 text-center text-black hover:bg-gray-700 ">Logout</button>
+            </li>
+            <li><button (click)="auth.logout()" class="bg-white p-2 text-center text-black hover:bg-black hover:text-white">Account</button></li>
+          </ul>
+          <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+              <li>
+                <button class="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full" (click)="auth.logout()">all</button>
+              </li>
+            </ul>
+        </details>
+      </li>
+      </div>
+
+      <ng-template #loggedOut>
+        <button (click)="auth.login()">Login with Auth0</button>
+      </ng-template>
+
         <!-- Cart Logo -->
         <li>
           <div class="drop-shadow-lg" routerLink="/cart">

@@ -5,10 +5,10 @@ import { Quantity } from '../../Models/Qantite';
 import { fontAwesomeIcons } from "../../font-awesome-icons";
 import { FaConfig, FaIconComponent, FaIconLibrary } from "@fortawesome/angular-fontawesome";
 import { ActivatedRoute, Router } from '@angular/router';
-import { ServiceService } from '../../productService/service.service';
-import { SearchService } from '../../searchService/search.service';
-import { CartService } from '../../CartService/cart.service';
-import { PostService } from '../../post_service/post.service';
+import { ServiceService } from '../../Services/productService/service.service';
+import { SearchService } from '../../Services/searchService/search.service';
+import { CartService } from '../../Services/CartService/cart.service';
+import { PostService } from '../../Services/post_service/post.service';
 
 @Component({
   selector: 'app-home',
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
       this.category = params['str'];
       this.updateVisibleProducts();
     });
-    
+
   }
 
   private initFontAwesome() {
@@ -85,6 +85,6 @@ export class HomeComponent implements OnInit {
   addtocart(p:Product){
     console.log(`product added ${p.id} that has a price of ${p.price}`)
     this.cartservice.addToCart(p)
-    
+
   }
 }

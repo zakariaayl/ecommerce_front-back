@@ -4,9 +4,11 @@ import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { FaConfig,FaIconComponent, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fontAwesomeIcons } from '../../font-awesome-icons';
 import { Product } from '../../Models/product';
-import { SeeProductServiceService } from '../../seeProductService/see-product-service.service';
+import { SeeProductServiceService } from '../../Services/seeProductService/see-product-service.service';
 import { Order } from '../../Models/Orders';
-import { PostService } from '../../post_service/post.service';
+import { PostService } from '../../Services/post_service/post.service';
+import { GettokenService, tok } from '../../Services/gettokencsrfService/gettoken.service';
+import { Token } from '@angular/compiler';
 
 @Component({
   selector: 'app-see-product',
@@ -24,14 +26,15 @@ export class SeeProductComponent {
     }
     id:number=0
     product!: Product;
-  constructor(private route: ActivatedRoute,private seeServe:SeeProductServiceService,private postserv:PostService) {
+  constructor(private route: ActivatedRoute,private seeServe:SeeProductServiceService,private postserv:PostService,private toekn:GettokenService) {
   }
-
+   tok!:tok;
   ngOnInit(){
     this.initFontAwesome()
     this.route.params.subscribe((params) => {
       this.id = +params['id'];
       this.seeServe.getProduct(this.id).subscribe((data)=>this.product=data)
+      this.toekn.gettoken().subscribe((data)=>this.tok=data)
 
   }
     );
@@ -50,7 +53,8 @@ export class SeeProductComponent {
     this.order.productid=this.id
     this.order.price=price
     console.log(price)
-    this.postserv.post(this.order).subscribe({
+    console.log(this.tok.token)
+    this.postserv.post(this.order,this.tok).subscribe({
       next: (response) => console.log('Success:', response),
       error: (error) => console.error('Error:', error)
     });

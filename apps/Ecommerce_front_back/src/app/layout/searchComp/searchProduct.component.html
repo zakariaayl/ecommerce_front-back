@@ -1,11 +1,10 @@
 <!--style="background-image: url('assets/images/background.avif');"-->
 <!-- style="background-image: linear-gradient(67.5deg, rgb(121,12,32) 0%, rgb(121,12,32) 21%,rgb(139,64,59) 21%, rgb(139,64,59) 28%,rgb(123, 66, 32) 28%, rgb(123, 66, 32) 32%,rgb(137, 86, 27) 32%, rgb(137, 86, 27) 41%,rgb(152, 105, 22) 41%, rgb(152, 105, 22) 48%,rgb(166, 125, 17) 48%, rgb(166, 125, 17) 69%,rgb(203,177,61) 69%, rgb(203,177,61) 93%,rgb(194, 164, 6) 93%, rgb(194, 164, 6) 100%),linear-gradient(45deg, rgb(121,12,32) 0%, rgb(121,12,32) 21%,rgb(139,64,59) 21%, rgb(139,64,59) 28%,rgb(123, 66, 32) 28%, rgb(123, 66, 32) 32%,rgb(137, 86, 27) 32%, rgb(137, 86, 27) 41%,rgb(152, 105, 22) 41%, rgb(152, 105, 22) 48%,rgb(166, 125, 17) 48%, rgb(166, 125, 17) 69%,rgb(203,177,61) 69%, rgb(203,177,61) 93%,rgb(194, 164, 6) 93%, rgb(194, 164, 6) 100%),linear-gradient(112.5deg, rgb(121,12,32) 0%, rgb(121,12,32) 21%,rgb(139,64,59) 21%, rgb(139,64,59) 28%,rgb(123, 66, 32) 28%, rgb(123, 66, 32) 32%,rgb(137, 86, 27) 32%, rgb(137, 86, 27) 41%,rgb(152, 105, 22) 41%, rgb(152, 105, 22) 48%,rgb(166, 125, 17) 48%, rgb(166, 125, 17) 69%,rgb(203,177,61) 69%, rgb(203,177,61) 93%,rgb(194, 164, 6) 93%, rgb(194, 164, 6) 100%),linear-gradient(90deg, rgb(173, 64, 191),rgb(42, 31, 17)); background-blend-mode:overlay,overlay,overlay,normal;" -->
-<div class="h-screen w-full bg-stone-800 ">
-  ">
-  <div class=" flex items-center justify-center h-92 mb-14 " >
+<div class="h-screen w-full bg-white ">
+    <div class=" flex items-center justify-center h-92 mb-14 " >
     <div class="flex relative">
-      <input #Inputdata (keyup.enter)="search(Inputdata.value)" name="search" type="text" class="rounded-lg h-5/6 border border-gray-50 xl:w-[600px] sm:w-[190px] md:w-[390px]" placeholder="serach for...">
-      <button (click)="search(Inputdata.value)" class="absolute right-0 top-0 p-2 hover:scale-110"><fa-icon [icon]="['fas','search']" ></fa-icon></button>
+      <input #Inputdata (keyup.enter)="search(Inputdata.value)" name="search" type="text" class="rounded-lg h-5/6 border border-black xl:w-[600px] sm:w-[190px] md:w-[390px] mt-5" placeholder="serach for...">
+      <button (click)="search(Inputdata.value)" class="absolute right-0 top-5 p-2 hover:scale-110"><fa-icon [icon]="['fas','search']" ></fa-icon></button>
 
     </div>
   </div>
@@ -14,7 +13,7 @@
     <div *ngFor="let product of product" >
 
       <!-- Product Card -->
-      <div class="bg-white w-full rounded-xl shadow-md overflow-hidden flex flex-col h-auto border border-white transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 ">
+      <div class="bg-white w-full rounded-xl shadow-md overflow-hidden flex flex-col h-auto border border-black transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 ">
         <!-- Product Image -->
         <div  (click)="navigate(product.id)">
           <div class="relative h-48  overflow-hidden group">

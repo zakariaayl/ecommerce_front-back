@@ -1,20 +1,20 @@
-<div class="h-screen w-full bg-stone-800 flex items-start  justify-center">
+<div class="h-screen w-full bg-white flex items-start  justify-center">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center justify-center mt-4">
     <!-- Image Section -->
-    <div class="shadow-lg shadow-black h-auto w-5/6 mx-auto rounded-lg border border-white flex items-center justify-center">
+    <div class="shadow-lg shadow-black h-auto w-5/6 mx-auto rounded-lg border border-black flex items-center justify-center">
       <img [src]="product.imgUrl" class="hover:scale-105 h-full w-full rounded-lg">
     </div>
 
     <!-- Content Section -->
     <div class="flex flex-col h-auto w-5/6 mx-auto">
       <!-- Product Name -->
-      <p class="text-white text-xl font-semibold mb-1">{{product.name}}</p>
+      <p class="text-black text-xl font-semibold mb-1">{{product.name}}</p>
       
       <!-- Product Description -->
-      <p class="text-white mb-2">{{product.description}}</p>
+      <p class="text-black mb-2">{{product.description}}</p>
       
       <!-- Quantity Section -->
-      <div class="bg-gray-50 p-2 w-full flex items-center justify-between rounded-lg mx-auto">
+      <div class="bg-blackp-2 w-full flex items-center justify-between rounded-lg mx-auto">
         <div class="text-sm font-bold text-gray-700">Quantity</div>
         
         <!-- Minus Button -->

@@ -24,7 +24,10 @@
           "apps/Ecommerce_front_back/src/favicon.ico",
           "apps/Ecommerce_front_back/src/assets"
         ],
-        "styles": ["apps/Ecommerce_front_back/src/styles.scss"],
+        "styles": [
+          "apps/Ecommerce_front_back/src/styles.scss",
+          "node_modules/@okta/okta-signin-widget/dist/css/okta-sign-in.min.css"
+                ],
         "scripts": []
       },
       "configurations": {

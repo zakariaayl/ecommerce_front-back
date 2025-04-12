@@ -1,0 +1,48 @@
+<h1>loading...</h1>
+<!--<div class="max-w-sm mx-auto  bg-white p-6 rounded-lg shadow-lg shadow-black my-72 mt-72">-->
+<!--  <h2 class="text-2xl font-semibold text-center mb-4">Set Your Password</h2>-->
+
+<!--  <form [formGroup]="passwordForm" (ngSubmit)="onSubmit()">-->
+
+<!--    &lt;!&ndash; Password Input &ndash;&gt;-->
+<!--    <div class="mb-4">-->
+<!--      <label for="password" class="block text-gray-700 font-medium">Password</label>-->
+<!--      <input-->
+<!--        id="password"-->
+<!--        type="password"-->
+<!--        formControlName="password"-->
+<!--        class="mt-2 p-3 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"-->
+<!--        placeholder="Enter your password"-->
+<!--      />-->
+<!--      <div *ngIf="passwordForm.get('password')?.invalid && passwordForm.get('password')?.touched" class="text-sm text-red-500 mt-1">-->
+<!--        <small *ngIf="passwordForm.get('password')?.hasError('required')">Password is required.</small>-->
+<!--        <small *ngIf="passwordForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</small>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Confirm Password Input &ndash;&gt;-->
+<!--    <div class="mb-6">-->
+<!--      <label for="confirmPassword" class="block text-gray-700 font-medium">Confirm Password</label>-->
+<!--      <input-->
+<!--        id="confirmPassword"-->
+<!--        type="password"-->
+<!--        formControlName="confirmPassword"-->
+<!--        class="mt-2 p-3 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"-->
+<!--        placeholder="Confirm your password"-->
+<!--      />-->
+<!--      <div *ngIf="passwordForm.get('confirmPassword')?.invalid && passwordForm.get('confirmPassword')?.touched" class="text-sm text-red-500 mt-1">-->
+<!--        <small *ngIf="passwordForm.get('confirmPassword')?.hasError('required')">Please confirm your password.</small>-->
+<!--        <small *ngIf="passwordForm.hasError('passwordMismatch')">Passwords do not match.</small>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Submit Button &ndash;&gt;-->
+<!--    <button-->
+<!--      type="submit"-->
+<!--      [disabled]="passwordForm.invalid"-->
+<!--      class="w-full py-3 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-300"-->
+<!--    >-->
+<!--      Set Password-->
+<!--    </button>-->
+<!--  </form>-->
+<!--</div>-->

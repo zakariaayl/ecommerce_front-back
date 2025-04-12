@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { SearchService } from '../../searchService/search.service';
+import { SearchService } from '../../Services/searchService/search.service';
 import { Product } from '../../Models/product';
 import { FaConfig, FaIconComponent, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fontAwesomeIcons } from '../../font-awesome-icons';

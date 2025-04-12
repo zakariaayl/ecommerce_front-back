@@ -5,7 +5,7 @@ import {fontAwesomeIcons} from "./font-awesome-icons";
 import {NavbarComponent} from "./layout/navbar/navbar.component";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import {HomeComponent} from "./layout/home/home.component";
-import {ServiceService} from "./productService/service.service";
+import {ServiceService} from "./Services/productService/service.service";
 import {Product} from "./Models/product";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
@@ -14,7 +14,7 @@ import { FooterComponent } from './layout/footerComp/footer.component';
 
 @Component({
   imports: [RouterModule,FontAwesomeModule,NavbarComponent,RouterOutlet,FormsModule
-    ,CommonModule,FooterComponent],
+    ,CommonModule,FooterComponent,FooterComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

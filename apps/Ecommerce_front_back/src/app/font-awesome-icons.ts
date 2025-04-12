@@ -32,6 +32,7 @@ import { faUser,  // 'user-circle'
   faKey,
   faChevronDown,
   faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faFacebookF, faInstagram, faTwitter, faAppStoreIos, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 export const fontAwesomeIcons:IconDefinition[]=[
   faUser,   // 'user'
   faUserCheck,    // 'user-check'
@@ -68,5 +69,6 @@ export const fontAwesomeIcons:IconDefinition[]=[
   faCartPlus,
   faCartShopping,
   faChevronDown,
-  faSearch
+  faSearch,
+  faFacebookF, faInstagram, faTwitter, faAppStoreIos, faGooglePlay
 ]
